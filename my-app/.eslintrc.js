@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest/globals": true
     },
     "extends": [
         "eslint:recommended",
@@ -29,12 +30,13 @@ module.exports = {
     },
     "plugins": [
         "@typescript-eslint",
-        "react"
+        "react",
+        "jest"
     ],
     "rules": {
         semi: ['error', 'never'],
         'comma-dangle': [2, 'never'],
-        'react/jsx-filename-extension': [1, { extension: ['.js ','.jsx']}],
+        'react/jsx-filename-extension': [1, { extensions: ['.js','.jsx']}],
         'no-use-before-define': [
             'error',
             {functions: true, classes: true, variables: true}
