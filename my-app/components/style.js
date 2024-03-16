@@ -52,3 +52,7 @@ export const StyledButton = styled.TouchableOpacity`
   background-color: #3498db;
   align-items: center;
 `;
+
+export const ButtonText = styled.Text`
+  
+`;

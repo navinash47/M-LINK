@@ -7,21 +7,35 @@ import {
     PageLogo,
     PageTitle,
     StyledInput,
-    StyledButton // Add this line
+    StyledButton,
+    ButtonText // Add this line
 } from './../components/style.js'
 
-// Define ButtonText if it's a styled component
-const ButtonText = styled.Text`
-  color: #fff; // Example styling, adjust as needed
-`;
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); // Add this line
 
     const handleLogin = () => {
-        // Add your login logic here
-        console.log("Login pressed", email, password);
+        if (!email && !password) {
+            console.error("Please enter both email and password.");
+        } else if (!email) {
+            console.error("Please enter an email.");
+        } else if (!password) {
+            console.error("Please enter a password.");
+        } else {
+            console.log("Login pressed", email, password);
+        }
+    };
+
+    const handleRegister = () => {
+        // Add your register logic here
+        console.log("Register pressed");
+    };
+
+    const handleGoogleSignup = () => {
+        // Add your Google signup logic here
+        console.log("Google Signup pressed");
     };
 
     return (
@@ -42,7 +56,13 @@ const Login = () => {
                     secureTextEntry={true}
                     />
                 <StyledButton onPress={handleLogin}>
-                {/* <ButtonText>Login</ButtonText> */}
+                    <ButtonText>Login</ButtonText>
+                </StyledButton>
+                <StyledButton onPress={handleRegister}>
+                    <ButtonText>Register</ButtonText>
+                </StyledButton>
+                <StyledButton onPress={handleGoogleSignup}>
+                    <ButtonText>Signup with Google</ButtonText>
                 </StyledButton>
             </InnerContainer>
         </StyledContainer>
