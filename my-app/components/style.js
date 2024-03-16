@@ -56,3 +56,41 @@ export const StyledButton = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
   
 `;
+
+export const StyledFormArea = styled.View`
+    width: 90%;
+`;
+
+export const StyledInputLabel = styled.Text`
+    color: ${tertiary};
+    font-size: 13px;
+    text-align: left;
+`;
+
+export const StyledTextInput = styled.TextInput`
+    background-color: ${secondary};
+    padding: 15px;
+    padding-left: 55px;
+    padding-right: 55px;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 60px;
+    margin-vertical: 3px;
+    margin-bottom: 10px;
+    color: ${tertiary};
+`;
+
+export const StyledSubmitButton = styled.TouchableOpacity`
+    padding: 15px;
+    background-color: ${brand};
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 60px;
+    margin-vertical: 5px;
+`;
+
+export const SubmitButtonText = styled.Text`
+    color: ${primary};
+    font-size: 20px;
+`;
