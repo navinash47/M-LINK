@@ -9,7 +9,7 @@ export const Colors= {
     primary: "#ffffff",
     secondary: "#E5E7EB",
     tertiary: "#1F2937",
-    darklight: "9CA3AF",
+    darklight: "#9CA3AF",
     brand: "#6D28D9",
     green: "#10B981",
     red: "#EF4444",
@@ -31,8 +31,8 @@ export const InnerContainer =styled.View `
 `;
 
 export const PageLogo = styled.Image `
-    width: 250px;
-    height: 200px;
+    width: 50px;
+    height: 50px;
 `;
 
 export const PageTitle =styled.Text `
@@ -41,4 +41,14 @@ export const PageTitle =styled.Text `
     font-weight: bold;
     color: ${brand};
     padding: 10px
+`;
+
+export const StyledInput = styled.TextInput`
+  /* Your styles here */
+`;
+export const StyledButton = styled.TouchableOpacity`
+  /* Your button styling here */
+  padding: 10px;
+  background-color: #3498db;
+  align-items: center;
 `;
