@@ -1,5 +1,17 @@
 import React, { useState } from "react";
 import styled from 'styled-components/native'; // Ensure you have this import for styled-components
+import { StackNavigationProp } from '@react-navigation/stack';
+
+// Define the types for your navigation stack
+type RootStackParamList = {
+  Register: undefined; // Add other screens as needed
+};
+
+type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Register'>;
+
+interface LoginProps {
+  navigation: LoginScreenNavigationProp;
+}
 
 import {
     StyledContainer,
@@ -12,7 +24,7 @@ import {
 } from './../components/style.js'
 
 
-const Login = () => {
+const Login: React.FC<LoginProps> = ({ navigation }) => { // Ensure navigation is received here
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); // Add this line
 
@@ -29,8 +41,7 @@ const Login = () => {
     };
 
     const handleRegister = () => {
-        // Add your register logic here
-        console.log("Register pressed");
+        navigation.navigate('Register'); // Use the name of the Register screen as defined in your navigator
     };
 
     const handleGoogleSignup = () => {
@@ -58,7 +69,7 @@ const Login = () => {
                 <StyledButton onPress={handleLogin}>
                     <ButtonText>Login</ButtonText>
                 </StyledButton>
-                <StyledButton onPress={handleRegister}>
+                <StyledButton onPress={handleRegister}> {/* Modify this line */}
                     <ButtonText>Register</ButtonText>
                 </StyledButton>
                 <StyledButton onPress={handleGoogleSignup}>
